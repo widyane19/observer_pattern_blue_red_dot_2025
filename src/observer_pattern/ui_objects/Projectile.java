@@ -1,6 +1,5 @@
 package observer_pattern.ui_objects;
 
-import java.util.ArrayList;
 import java.util.List;
 import observer_pattern.ui_control.BattlePanel;
 

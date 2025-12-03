@@ -11,6 +11,7 @@ import java.awt.Color;
 public class RedDot implements BattlePanelOps {
     private int x;
     private int y;
+    private BattlePanel battlePanel;
     // Here we add one kind of property that can be observed (ie listened to)
     // That property is 'position'
     // We can create more properties to listen to (if you want)
@@ -49,9 +50,15 @@ public class RedDot implements BattlePanelOps {
     }
 
     // Implement the BattlePanelOps interface
+    // Implement the BattlePanelOps interface
     @Override
     public BattlePanel getBattlePanel() {
         return battlePanel;
+    }
+
+    @Override
+    public void setBattlePanel(BattlePanel battlePanel) {
+        this.battlePanel = battlePanel;
     }
 
     public void drawRedDot(Graphics g) {
