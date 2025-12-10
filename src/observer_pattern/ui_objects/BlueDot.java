@@ -16,6 +16,7 @@ public class BlueDot implements BattlePanelOps {
     private BattlePanel battlePanel;
     private final Random random = new Random();
     private Timer moveTimer;
+    private boolean randomMotion = true;
 
     public BlueDot() {
     }
@@ -77,9 +78,13 @@ public class BlueDot implements BattlePanelOps {
         g.fillOval(this.x - 15, this.y - 15, 30, 30);
 
     }
+    public void setKeyboardMode(boolean enabled) {
+        this.randomMotion = !enabled;
+    }
     public void startRandomMotion() {
-        if (battlePanel == null) return;
+        //if (battlePanel == null) return;
         moveTimer = new Timer(100, e -> {
+            if (!randomMotion) return; // skip random movement if in keyboard mode
             int dx = random.nextInt(11) - 5; // -5 to +5
             int dy = random.nextInt(11) - 5; // -5 to +5
             int newX = Math.max(0, Math.min(getBattlePanel().getWidth(), x + dx));
