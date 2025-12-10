@@ -1,13 +1,12 @@
 package observer_pattern.ui_control;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.swing.*;
 import observer_pattern.ui_objects.BlueDot;
-import observer_pattern.ui_objects.RedDot;
 import observer_pattern.ui_objects.Projectile;
+import observer_pattern.ui_objects.RedDot;
 
 public class BattlePanel extends JPanel {
     private List<Projectile> projectiles = new ArrayList<>();
@@ -19,6 +18,7 @@ public class BattlePanel extends JPanel {
         this.blueDot.setX(getWidth() / 2);
         this.blueDot.setY(getHeight() / 2);
         this.redDot = redDot;
+        this.redDot.setBattlePanel(this);
         this.redDot.setX(50);
         this.redDot.setY(50);
         // Timer for projectile movement

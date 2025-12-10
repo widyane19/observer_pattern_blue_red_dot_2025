@@ -1,14 +1,12 @@
 package observer_pattern.listeners;
 
-import javax.swing.*;
-
-import observer_pattern.ui_objects.RedDot;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.*;
+import observer_pattern.ui_objects.RedDot;
 
 public class RedDot_TimerListener implements ActionListener {
     private Timer timer;
@@ -42,7 +40,10 @@ public class RedDot_TimerListener implements ActionListener {
 
                     // Update X coordinate
                     int deltaX = random.nextInt(10) + 1; // Random step between 1 and 10
-                    if (currentX + deltaX * direction[0] > 600 || currentX + deltaX * direction[0] < 0) {
+                    int panelWidth = redDot.getBattlePanel().getWidth();
+                    int panelHeight = redDot.getBattlePanel().getHeight();
+
+                    if (currentX + deltaX * direction[0] > panelWidth || currentX + deltaX * direction[0] < 0) {
                         direction[0] *= -1; // Reverse direction
                     }
                     redDot.setX(currentX + deltaX * direction[0]);
@@ -51,7 +52,7 @@ public class RedDot_TimerListener implements ActionListener {
                     int deltaY = random.nextInt(10) + 1; // Random step between 1 and 10
                     // 343 is chosen because that is what size where red dot may go off default
                     // screen
-                    if (currentY + deltaY * direction[1] > 343 || currentY + deltaY * direction[1] < 0) {
+                    if (currentY + deltaY * direction[1] > panelHeight || currentY + deltaY * direction[1] < 0) {
                         direction[1] *= -1; // Reverse direction
                     }
                     redDot.setY(currentY + deltaY * direction[1]);
