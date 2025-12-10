@@ -57,7 +57,7 @@ public class RedDot_TimerListener implements ActionListener {
                     }
                     redDot.setY(currentY + deltaY * direction[1]);
                 }
-            }, 0, 100); // Update every 100ms
+            }, 0, 50); // Update every 100ms
         } else {
             button.setText("Start Red Dot");
 

@@ -37,7 +37,7 @@ public class Projectile {
         int dx = redDot.getX() - blueDotX;
         int dy = redDot.getY() - blueDotY;
         double distance = Math.sqrt(dx * dx + dy * dy);
-        double speed = 5; // Vector distance of projectile in pixels immediately after firing.
+        double speed = 10; // Vector distance of projectile in pixels immediately after firing.
         double vx = (dx / distance) * speed;
         double vy = (dy / distance) * speed;
 
