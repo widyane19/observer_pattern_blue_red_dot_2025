@@ -36,5 +36,6 @@ public class TopLevel_UI extends JFrame {
 
         // create and add listeners for the space key
         addKeyListener(new BattlePanel_KeyListener(battlePanel));
+        addKeyListener(new BlueDot_KeyListener(blueDot));
     }
 }
