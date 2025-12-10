@@ -1,11 +1,9 @@
 package observer_pattern.ui_control;
 
+import java.awt.*;
 import javax.swing.*;
-
 import observer_pattern.listeners.*;
 import observer_pattern.ui_objects.*;
-
-import java.awt.*;
 
 public class TopLevel_UI extends JFrame {
     private final BattlePanel battlePanel;
@@ -26,6 +24,9 @@ public class TopLevel_UI extends JFrame {
         battlePanel = new BattlePanel(blueDot, redDot);
         blueDot.setBattlePanel(battlePanel);
         blueDot.setRedDotPropertyListener(redDot);
+        blueDot.setX(battlePanel.getWidth() / 2);
+        blueDot.setY(battlePanel.getHeight() / 2);
+        blueDot.startRandomMotion();
         // Create the start/stop button
         StartStop_RedDot_Button startStopButton = new StartStop_RedDot_Button(redDot);
 
